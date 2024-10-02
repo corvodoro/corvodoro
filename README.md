@@ -1,1 +1,2 @@
-It's official corvodoro website!
+# corvodoro
+This repository contains the official corvodoro website.
