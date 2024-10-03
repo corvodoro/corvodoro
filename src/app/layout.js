@@ -1,4 +1,4 @@
-import Nav from "@/components/nav";
+import LeftNav from "@/components/leftnav";
 import "./globals.css";
 
 export const metadata = {
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-950 text-slate-50">
-        <Nav />
+        <LeftNav />
         {children}
       </body>
     </html>
