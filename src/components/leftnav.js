@@ -14,7 +14,11 @@ export default function LeftNav() {
     setIsExpanded(false);
   };
 
-  const scrollToSection = (id) => {
+  const scrollTo = (id) => {
+    if(id === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     const section = document.getElementById(id);
     section.scrollIntoView({ behavior: "smooth" });
   };
@@ -24,21 +28,21 @@ export default function LeftNav() {
     onMouseEnter={expand}
     onMouseLeave={shrink}>
       <ul className="flex flex-col items-start p-4 space-y-4">
-        <li className="text-white flex items-center">
+        <li className="text-white flex items-center" onClick={()=>scrollTo('top')}>
           <span>[]</span> 
           {isExpanded && <span className = "ml-2">Home</span>}
         </li>
-        <li className="text-white flex items-center">
+        <li className="text-white flex items-center" onClick={()=>scrollTo('about')}>
           <span>[]</span> 
           {isExpanded && <span className = "ml-2">About</span>}
         </li>
-         <li className="text-white flex items-center">
+         <li className="text-white flex items-center" onClick={()=>scrollTo('projects')}>
           <span>[]</span> 
-          {isExpanded && <span className = "ml-2">Services</span>}
+          {isExpanded && <span className = "ml-2">Projects</span>}
         </li>       
-        <li className="text-white flex items-center">
+        <li className="text-white flex items-center" onClick={()=>scrollTo('team')}>
           <span>[]</span> 
-          {isExpanded && <span className = "ml-2">About</span>}
+          {isExpanded && <span className = "ml-2">Team</span>}
         </li>      
       </ul>
     </nav>
