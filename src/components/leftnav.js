@@ -13,6 +13,12 @@ export default function LeftNav() {
   const shrink = () => {
     setIsExpanded(false);
   };
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav className = {`fixed top-0 left-0 h-full transition-all duration-300 ${isExpanded ? 'w-32' : 'w-16'} bg-gray-800`}
     onMouseEnter={expand}
